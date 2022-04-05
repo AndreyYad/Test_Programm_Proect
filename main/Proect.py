@@ -11,12 +11,14 @@ class App(QWidget):
 
         #print(check_output('wmic csproduct get uuid').decode().split('\n')[1].strip())
 
+        #запуск дизайна
         self.path = abspath(dirname(argv[0]))
         self.ui = uic.loadUi(self.path[:self.path.rindex('\\')] + '\\design\\Design.ui')
         self.ui.show()
 
         self.WindowCreatTest = 0
 
+        #"Наборы" элементов дизайна
         self.widgets = {
             'main' : [
                 self.ui.label,
@@ -74,6 +76,8 @@ class App(QWidget):
         self.ButtonsWork()
 
     def Open(self,name):
+
+        #Метод открытия наборов элементов
         
         self.WidgetsHide(0)
 
@@ -82,6 +86,7 @@ class App(QWidget):
         else:
             self.WidgetsHide('generic_test')
 
+        #Сброс текстовых строк
         if name == 'reg' or name == 'sign':
             for Obj in [self.ui.line_reg_login, self.ui.line_reg_password, self.ui.line_reg_password_2, self.ui.line_sign_password, self.ui.line_sign_login]:
                 Obj.setText('')
@@ -102,6 +107,8 @@ class App(QWidget):
                 Object.hide()
 
     def ButtonsWork(self):
+
+        #Действие кнопок
 
         self.widgets['main'][3].clicked.connect(lambda: self.Open('info'))
         self.widgets['main'][2].clicked.connect(lambda: self.Open('sign'))
