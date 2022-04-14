@@ -16,8 +16,6 @@ class App(QWidget):
         self.ui = uic.loadUi(self.path[:self.path.rindex('\\')] + '\\design\\Design.ui')
         self.ui.show()
 
-        self.WindowCreatTest = 0
-
         #"Наборы" элементов дизайна
         self.widgets = {
             'main' : [
@@ -69,22 +67,35 @@ class App(QWidget):
                 self.ui.but_no_exit,
                 self.ui.but_exit,
                 self.ui.info_text_2
+            ],
+            'close_que' : [
+                self.ui.slider,
+                self.ui.one_var
+            ],
+            'lines' : [
+                self.ui.answer_1,
+                self.ui.answer_2,
+                self.ui.answer_3,
+                self.ui.answer_4,
+                self.ui.answer_5
+            ],
+            'que_red_generic' : [
+                self.ui.text_que,
+                self.ui.num_que,
+                self.ui.close_que,
+                self.ui.but_delete
             ]
         }
 
         self.Open('main')
         self.ButtonsWork()
 
-    def Open(self,name):
+    def Open(self,name,hide=True):
 
         #Метод открытия наборов элементов
         
-        self.WidgetsHide(0)
-
-        if ['first_win_test'].count(name):
-            self.Open('generic_test')
-        else:
-            self.WidgetsHide('generic_test')
+        if hide:
+            self.WidgetsHide(0)
 
         #Сброс текстовых строк
         if name == 'reg' or name == 'sign':
@@ -106,6 +117,73 @@ class App(QWidget):
             for Object in self.widgets[Key]:
                 Object.hide()
 
+    def ChangeWindowRed(self, num):
+
+        if num == 0:
+            self.TestJson = {
+                'name':'',
+                'questions':[]
+            }
+            self.WindowCreatTest = 0
+
+        if self.WindowCreatTest == 0:
+            self.TestJson['name'] = self.ui.line_name_test
+
+        self.WindowCreatTest += num
+
+        print(self.WindowCreatTest)
+
+        if self.WindowCreatTest == len(self.TestJson['questions'])+1:
+            self.TestJson['questions'].append(
+                {
+                    'text':'',
+                    'type':'close',
+                    'answer':
+                    {
+                        'value':4,
+                        'right':[],
+                        'type_close':1
+                    }
+                }
+            )
+
+        if self.WindowCreatTest == len(self.TestJson['questions']):
+            self.ui.but_next.setText('+')
+        else:
+            self.ui.but_next.setText('>')
+            
+        try:
+            if self.TestJson['questions'][self.WindowCreatTest-1]['type'] == 'close':
+                self.Open('close_que')
+                self.Open('que_red_generic',False)
+
+                for index in range(5):
+                    self.widgets['lines'][index].hide()
+
+                for index in range(self.TestJson['questions'][self.WindowCreatTest-1]['answer']['value']):
+                    self.widgets['lines'][index].show()
+
+                self.ui.slider.setValue(self.TestJson['questions'][self.WindowCreatTest-1]['answer']['value'])
+
+        except IndexError:
+            pass
+
+        if self.WindowCreatTest == 0:
+            self.Open('first_win_test')
+            self.ui.but_pre.hide()
+        else:
+            self.ui.num_que.setText('{}/{}'.format(self.WindowCreatTest, len(self.TestJson['questions'])))
+            self.ui.but_pre.show()
+
+        self.ui.but_next.show()
+
+    
+    def DeleteQue(self):
+
+        self.TestJson['questions'].pop(self.WindowCreatTest-1)
+        self.ChangeWindowRed(-1)
+
+
     def ButtonsWork(self):
 
         #Действие кнопок
@@ -123,8 +201,12 @@ class App(QWidget):
 
         self.widgets['main_test'][2].clicked.connect(lambda: self.Open('main'))
 
-        self.widgets['main_test'][0].clicked.connect(lambda: self.Open('first_win_test'))
+        self.widgets['main_test'][0].clicked.connect(lambda: self.ChangeWindowRed(0))
 
+        self.widgets['generic_test'][0].clicked.connect(lambda: self.ChangeWindowRed(-1))
+        self.widgets['generic_test'][1].clicked.connect(lambda: self.ChangeWindowRed(1))
+
+        self.widgets['que_red_generic'][3].clicked.connect(lambda: self.DeleteQue())
 
 
 

@@ -591,6 +591,151 @@
     <string>Не выходить</string>
    </property>
   </widget>
+  <widget class="QCheckBox" name="close_que">
+   <property name="geometry">
+    <rect>
+     <x>339</x>
+     <y>290</y>
+     <width>111</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Закрытый вопрос</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="one_var">
+   <property name="geometry">
+    <rect>
+     <x>339</x>
+     <y>310</y>
+     <width>111</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Один вариант</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="answer_1">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>210</y>
+     <width>131</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="answer_2">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>240</y>
+     <width>131</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="answer_3">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>270</y>
+     <width>131</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="answer_4">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>300</y>
+     <width>131</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="answer_5">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>330</y>
+     <width>131</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QSlider" name="slider">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>250</y>
+     <width>22</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>2</number>
+   </property>
+   <property name="maximum">
+    <number>5</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Vertical</enum>
+   </property>
+   <property name="invertedAppearance">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="num_que">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>12</y>
+     <width>121</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>17</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="but_delete">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>240</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(199, 129, 129);</string>
+   </property>
+   <property name="text">
+    <string>Удалить</string>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="text_que">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>50</y>
+     <width>291</width>
+     <height>131</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(199, 129, 129);</string>
+   </property>
+  </widget>
   <zorder>background</zorder>
   <zorder>but_create_test</zorder>
   <zorder>but_sign</zorder>
@@ -620,11 +765,22 @@
   <zorder>but_tmain_back</zorder>
   <zorder>line_name_test</zorder>
   <zorder>label_name_test</zorder>
-  <zorder>but_next</zorder>
-  <zorder>but_pre</zorder>
   <zorder>info_text_2</zorder>
   <zorder>but_exit</zorder>
   <zorder>but_no_exit</zorder>
+  <zorder>but_next</zorder>
+  <zorder>but_pre</zorder>
+  <zorder>close_que</zorder>
+  <zorder>one_var</zorder>
+  <zorder>answer_1</zorder>
+  <zorder>answer_2</zorder>
+  <zorder>answer_3</zorder>
+  <zorder>answer_4</zorder>
+  <zorder>answer_5</zorder>
+  <zorder>slider</zorder>
+  <zorder>num_que</zorder>
+  <zorder>but_delete</zorder>
+  <zorder>text_que</zorder>
  </widget>
  <resources/>
  <connections/>
