@@ -591,32 +591,6 @@
     <string>Не выходить</string>
    </property>
   </widget>
-  <widget class="QCheckBox" name="close_que">
-   <property name="geometry">
-    <rect>
-     <x>339</x>
-     <y>290</y>
-     <width>111</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Закрытый вопрос</string>
-   </property>
-  </widget>
-  <widget class="QCheckBox" name="one_var">
-   <property name="geometry">
-    <rect>
-     <x>339</x>
-     <y>310</y>
-     <width>111</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Один вариант</string>
-   </property>
-  </widget>
   <widget class="QLineEdit" name="answer_1">
    <property name="geometry">
     <rect>
@@ -692,7 +666,7 @@
   <widget class="QLabel" name="num_que">
    <property name="geometry">
     <rect>
-     <x>180</x>
+     <x>195</x>
      <y>12</y>
      <width>121</width>
      <height>31</height>
@@ -736,6 +710,126 @@
     <string notr="true">background-color: rgb(199, 129, 129);</string>
    </property>
   </widget>
+  <widget class="QCheckBox" name="var_ans_1">
+   <property name="geometry">
+    <rect>
+     <x>305</x>
+     <y>211</y>
+     <width>16</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="var_ans_3">
+   <property name="geometry">
+    <rect>
+     <x>305</x>
+     <y>271</y>
+     <width>16</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="var_ans_4">
+   <property name="geometry">
+    <rect>
+     <x>305</x>
+     <y>301</y>
+     <width>16</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="var_ans_2">
+   <property name="geometry">
+    <rect>
+     <x>305</x>
+     <y>241</y>
+     <width>16</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="var_ans_5">
+   <property name="geometry">
+    <rect>
+     <x>305</x>
+     <y>331</y>
+     <width>16</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="debug">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>31</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>D</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="close_que">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>290</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(255, 160, 160, 150);</string>
+   </property>
+   <property name="text">
+    <string>Закрытый</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="one_var">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>320</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(255, 160, 160, 150);</string>
+   </property>
+   <property name="text">
+    <string>Несколько</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="line_que">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>210</y>
+     <width>211</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
   <zorder>background</zorder>
   <zorder>but_create_test</zorder>
   <zorder>but_sign</zorder>
@@ -770,9 +864,6 @@
   <zorder>but_no_exit</zorder>
   <zorder>but_next</zorder>
   <zorder>but_pre</zorder>
-  <zorder>close_que</zorder>
-  <zorder>one_var</zorder>
-  <zorder>answer_1</zorder>
   <zorder>answer_2</zorder>
   <zorder>answer_3</zorder>
   <zorder>answer_4</zorder>
@@ -781,6 +872,16 @@
   <zorder>num_que</zorder>
   <zorder>but_delete</zorder>
   <zorder>text_que</zorder>
+  <zorder>var_ans_1</zorder>
+  <zorder>var_ans_3</zorder>
+  <zorder>var_ans_4</zorder>
+  <zorder>var_ans_2</zorder>
+  <zorder>var_ans_5</zorder>
+  <zorder>debug</zorder>
+  <zorder>close_que</zorder>
+  <zorder>one_var</zorder>
+  <zorder>answer_1</zorder>
+  <zorder>line_que</zorder>
  </widget>
  <resources/>
  <connections/>
